@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="QuanLyThuVien.jnlp">
+  <information>
+    <title>QuanLyThuVien</title>
+    <vendor>truon</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="QuanLyThuVien.jar" size="102770" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\mssql-jdbc-12.2.0.jre8.jar" size="1440368" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="quanlythuvien.QuanLyThuVien"  name="QuanLyThuVien" />
+  <update check="always"/>
+</jnlp>

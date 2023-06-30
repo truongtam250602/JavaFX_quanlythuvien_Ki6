@@ -1,0 +1,55 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 4, 2023, 4:09:53 PM
+    Author     : truon
+*/
+
+.wrapperContain{
+    -fx-background-color: linear-gradient(to bottom right,#6D2FFF,#836EFB,#FB539B)
+}
+.userNameContain{
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+}
+.txtUserName{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.passwordContain{
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+}
+.txtPassword{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.btnLogin{
+    -fx-background-color:#462AD8;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+.btnLogin:hover{
+    -fx-background-color: #FB539B;
+}
+.linkForgetPassword{
+    -fx-cursor: hand;
+}
+.linkForgetPassword:hover{
+    -fx-text-fill: darkgray;
+    -fx-cursor: hand;
+}
+.linkRegister{
+    -fx-cursor: hand;
+}
+.linkRegister:hover{
+    -fx-cursor: hand;
+    -fx-text-fill: darkgray;
+}
+
+.btnExitRegister:hover{
+    -fx-cursor: hand;
+}

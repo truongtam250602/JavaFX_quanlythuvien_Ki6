@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="wrapperView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="wrapperView" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlythuvien.FXMLDashBoardController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="280.0" styleClass="wrapperMenuContain" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@learning.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label styleClass="titleMenuContain" text="Thư Viện Sách">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox fx:id="quanlythuvien" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="280.0">
+                <children>
+                    <FontAwesomeIconView fill="#d0c0ff" glyphName="HOME" size="24">
+                     <HBox.margin>
+                        <Insets left="40.0" right="-20.0" />
+                     </HBox.margin>
+                    </FontAwesomeIconView>
+                    <RadioButton id="radioBtnQuanLyThuVien" fx:id="radioBtnQuanLyThuVien" mnemonicParsing="false" prefHeight="65.0" prefWidth="236.0" text="Tổng quan thư viện">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroup" />
+                     </toggleGroup>
+                     <styleClass>
+                        <String fx:value="radioBtnQuanLyThuVien" />
+                        <String fx:value="itemMenu" />
+                     </styleClass></RadioButton>
+                </children>
+                <styleClass>
+                    <String fx:value="itemQuanLyThuVien" />
+                    <String fx:value="itemMenu" />
+                </styleClass>
+            </HBox>
+            <HBox fx:id="quanlysach" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="280.0">
+                <children>
+                    <FontAwesomeIconView fill="#d0c0ff" glyphName="BOOK" size="24">
+                        <HBox.margin>
+                            <Insets left="40.0" right="-20.0" />
+                        </HBox.margin>
+                    </FontAwesomeIconView>
+                    <RadioButton id="radioBtnQuanLySach" fx:id="radioBtnQuanLySach" mnemonicParsing="false" prefHeight="60.0" prefWidth="269.0" style="-fx-text-fill: #d0c0ff;" styleClass="radioBtnQuanLySach" text="Quản lý danh mục sách" toggleGroup="$toggleGroup" />
+                </children>
+               <styleClass>
+                  <String fx:value="itemQuanLySach" />
+                  <String fx:value="itemMenu" />
+               </styleClass>
+            </HBox>
+            <HBox fx:id="quanlythanhvien" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="280.0">
+                <children>
+                    <FontAwesomeIconView fill="#d0c0ff" glyphName="GROUP" size="24">
+                        <HBox.margin>
+                            <Insets left="40.0" right="-20.0" />
+                        </HBox.margin>
+                    </FontAwesomeIconView>
+                    <RadioButton id="radioBtnQuanLyThanhVien" fx:id="radioBtnQuanLyThanhVien" mnemonicParsing="false" prefHeight="60.0" prefWidth="269.0" style="-fx-text-fill: #d0c0ff;" styleClass="radioBtnQuanLyThanhVien" text="Quản lý thành viên" toggleGroup="$toggleGroup" />
+                </children>
+               <styleClass>
+                  <String fx:value="itemQuanLyThanhVien" />
+                  <String fx:value="itemMenu" />
+               </styleClass>
+            </HBox>
+            <HBox fx:id="quanlymuontra" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="280.0">
+                <children>
+                  <FontAwesomeIconView fill="#d0c0ff" glyphName="TAG" size="24">
+                     <HBox.margin>
+                        <Insets left="40.0" right="-20.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                    <RadioButton id="radioQuanLyMuonTra" fx:id="radioBtnQuanLyMuonTra" mnemonicParsing="false" prefHeight="60.0" prefWidth="269.0" style="-fx-text-fill: #d0c0ff;" text="Quản lý mượn/trả sách" textFill="#fb539b" toggleGroup="$toggleGroup" />
+                </children>
+               <styleClass>
+                  <String fx:value="itemQuanLyTraMuonSach" />
+                  <String fx:value="itemMenu" />
+               </styleClass>
+            </HBox>
+            <HBox fx:id="thongtinphanmem" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="280.0">
+                <children>
+                    <FontAwesomeIconView fill="#d0c0ff" glyphName="INFO" size="24">
+                        <HBox.margin>
+                            <Insets left="48.0" right="-20.0" />
+                        </HBox.margin>
+                    </FontAwesomeIconView>
+                    <RadioButton id="radioThongTinPhanMem" fx:id="radioBtnThongTinPhanMem" mnemonicParsing="false" prefHeight="60.0" prefWidth="269.0" style="-fx-text-fill: #d0c0ff;" text=" Thông tin phần mềm" textFill="#7e82fc" toggleGroup="$toggleGroup" />
+                </children>
+               <styleClass>
+                  <String fx:value="itemThongTin" />
+                  <String fx:value="itemMenu" />
+               </styleClass>
+            </HBox>      
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane fx:id="wrapperContain" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER_LEFT" maxWidth="2000.0" prefHeight="60.0" prefWidth="1200.0" style="-fx-translate-x: 0;" BorderPane.alignment="CENTER">
+                <children>
+                    <HBox alignment="CENTER_LEFT" maxWidth="1500.0" prefHeight="60.0" prefWidth="900.0" style="-fx-translate-x: 0;">
+                        <children>
+                            <FontAwesomeIconView fx:id="iconView" fill="#fb539b" glyphName="HOME" size="24" text="">
+                            <HBox.margin>
+                                <Insets left="30.0" right="-6.0" />
+                            </HBox.margin></FontAwesomeIconView>
+                            <Label fx:id="labelView" prefHeight="18.0" prefWidth="188.0" style="-fx-text-fill: #FB539B; -fx-font-size: 16;" text="Quản lý thư viện">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                            </Label>
+                        </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                    </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="60.0">
+                     <children>
+                        <StackPane fx:id="wrapperAvatar" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Circle fx:id="circle" fill="DODGERBLUE" radius="22.0" stroke="#006cfa" strokeType="INSIDE" />
+                           </children>
+                        </StackPane>
+                          <Label fx:id="userNameOnStream" maxWidth="200.0" minWidth="80.0" prefWidth="0.0" style="-fx-text-fill: #fff; -fx-font-size: 12;">
+                              <HBox.margin>
+                                  <Insets left="6.0" right="4.0" />
+                              </HBox.margin>
+                          </Label>
+                            <FontAwesomeIconView fx:id="angleDown" fill="WHITE" glyphName="ANGLE_DOWN" size="20" style="-fx-cursor: hand;" styleClass="angleDown">
+                           <HBox.margin>
+                              <Insets left="4.0" right="30.0" />
+                           </HBox.margin>
+                            </FontAwesomeIconView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="400.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <center>
+            <AnchorPane layoutY="100.0" prefHeight="700.0" prefWidth="1187.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane fx:id="quanLySachView" prefHeight="700.0" prefWidth="1200.0" visible="false">
+                     <center>
+                        <TableView fx:id="tableListBookView" maxHeight="-Infinity" maxWidth="1080.0" prefHeight="200.0" prefWidth="200.0" style="-fx-pref-height: 800;" styleClass="tableView" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="maSachColumn" prefWidth="89.5" text="Mã sách">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                    <String fx:value="tableColumn1" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tenSachColumn" prefWidth="161.5" text="Tên sách">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tacGiaColumn" prefWidth="160.0" text="Tác giả">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="namXBColumn" prefWidth="100.0" text="Năm XB">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="nhaXBColumn" prefWidth="150.0" text="Nhà XB">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="soLuongColumn" prefWidth="80.5" text="Số lượng">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="theLoaiColumn" prefWidth="109.5" text="Thể loại">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="ngayNhapColumn" prefWidth="120.0" text="Ngày nhập">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tuyChonColumn" prefWidth="114.0" text="Tùy chọn">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                           </columns>
+                           <BorderPane.margin>
+                              <Insets left="20.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <top>
+                        <HBox prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" maxWidth="255.0" prefHeight="30.0" prefWidth="255.0" style="-fx-background-color: #ffff; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #eff2f7;" styleClass="wrapperSeachContain">
+                                 <children>
+                                    <TextField fx:id="txtSearchBook" maxWidth="260.0" prefHeight="30.0" prefWidth="260.0" promptText="Tìm kiếm..." style="-fx-text-fill: #000; -fx-background-color: transparent; -fx-pref-height: 30;">
+                                       <HBox.margin>
+                                          <Insets left="6.0" />
+                                       </HBox.margin>
+                                       <styleClass>
+                                          <String fx:value="txtFind" />
+                                          <String fx:value="txtSearch" />
+                                       </styleClass>
+                                    </TextField>
+                                    <FontAwesomeIconView fill="#b0b9c6" glyphName="SEARCH" size="12" text="">
+                                       <HBox.margin>
+                                          <Insets left="4.0" right="10.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="25.0" left="20.0" top="25.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="893.0">
+                                 <children>
+                                    <HBox fx:id="btnAddBook" alignment="CENTER" onMouseClicked="#btnAddBook_Click" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #623ed0; -fx-background-radius: 20; -fx-cursor: hand;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE_ALT" size="16">
+                                             <HBox.margin>
+                                                <Insets left="4.0" right="6.0" />
+                                             </HBox.margin>
+                                          </FontAwesomeIconView>
+                                          <Label style="-fx-text-fill: #fff;" text="Thêm sách" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="22.0" right="12.0" top="22.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="btnRefresh" alignment="CENTER" onMouseClicked="#btnRefreshListBook_Click" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #623ed0; -fx-background-radius: 40; -fx-cursor: hand;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </FontAwesomeIconView>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="22.0" right="52.0" top="22.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="50.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+                  <BorderPane fx:id="quanLyThanhVienView" prefHeight="700.0" prefWidth="1200.0" visible="false">
+                     <center>
+                        <TableView fx:id="tableListMemberView" maxWidth="1080.0" prefHeight="200.0" prefWidth="200.0" style="-fx-pref-height: 800;" styleClass="tableView" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="maThanhVienColumn" prefWidth="87.49996948242188" text="Mã TV">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tenThanhVienColumn" prefWidth="143.5" text="Tên thành viên">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="daichiColumn" prefWidth="124.5" text="Địa chỉ">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="sdtColumn" prefWidth="117.0" text="SĐT">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="emailColumn" prefWidth="192.0" text="Email">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="sachDaMuonColumn" prefWidth="120.5" text="Số sách đã mượn">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="sachChuaTraColumn" prefWidth="105.5" text="Số sách chưa trả">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="theThanhVienColumn" prefWidth="110.0" text="Số thẻ TV">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tuyChonMember" prefWidth="105.0" text="Tùy chọn">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                           </columns>
+                           <BorderPane.margin>
+                              <Insets left="20.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <top>
+                        <HBox prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" maxWidth="255.0" prefHeight="30.0" prefWidth="255.0" style="-fx-background-color: #ffff; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #eff2f7;" styleClass="wrapperSeachContain">
+                                 <children>
+                                    <TextField fx:id="txtSearchMember" maxWidth="260.0" prefHeight="30.0" prefWidth="260.0" promptText="Tìm kiếm..." style="-fx-text-fill: #000; -fx-background-color: transparent; -fx-pref-height: 30;">
+                                       <HBox.margin>
+                                          <Insets left="6.0" />
+                                       </HBox.margin>
+                                       <styleClass>
+                                          <String fx:value="txtFind" />
+                                          <String fx:value="txtSearch" />
+                                       </styleClass>
+                                    </TextField>
+                                    <FontAwesomeIconView fill="#b0b9c6" glyphName="SEARCH" size="12" text="">
+                                       <HBox.margin>
+                                          <Insets left="4.0" right="10.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="25.0" left="20.0" top="25.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="893.0">
+                                 <children>
+                                    <HBox fx:id="btnAddMember" alignment="CENTER" onMouseClicked="#btnAddMember_Click" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #623ed0; -fx-background-radius: 20; -fx-cursor: hand;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="USER_PLUS" size="16">
+                                             <HBox.margin>
+                                                <Insets left="4.0" right="6.0" />
+                                             </HBox.margin>
+                                          </FontAwesomeIconView>
+                                          <Label style="-fx-text-fill: #fff;" text="Thêm thành viên" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="22.0" right="12.0" top="22.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="btnRefreshMemberList" alignment="CENTER" onMouseClicked="#btnRefreshMember_Click" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #623ed0; -fx-background-radius: 40; -fx-cursor: hand;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </FontAwesomeIconView>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="22.0" right="52.0" top="22.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="50.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+                  <VBox fx:id="viewEditBook" alignment="CENTER" layoutX="346.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #623ed0; -fx-background-radius: 10;" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Mã sách" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtMaSach_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="100.0" text="Tên sách" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTenSach_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="100.0" text="Tác giả" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTacGia_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Năm xuất bản" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <DatePicker fx:id="txtNamXB_Edit" prefHeight="30.0" prefWidth="250.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Nhà xuất bản" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtNhaXB_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="100.0" text="Số lượng" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtSoLuong_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="536.0">
+                           <children>
+                              <Button fx:id="btnSua_Edit" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: #71abfa;" styleClass="btnLuu" text="Sửa" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="14.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnHuy_Edit" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: FB539B;" styleClass="btnHuy" text="Hủy" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="-230.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="viewEditMember" alignment="CENTER" layoutX="346.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #623ed0; -fx-background-radius: 10;" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Mã thành viên" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtMaThanhVien_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Tên thành viên" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTenThanhVien_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Địa chỉ" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtDiaChi_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Số điện thoại" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtSoDienThoai_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Email" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtEmail_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="360.0" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="19.0" prefWidth="120.0" text="Thẻ thành viên" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTheThanhVien_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="536.0">
+                           <children>
+                              <Button fx:id="btnSua_EditMember" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: #71abfa;" styleClass="btnLuu" text="Sửa" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="14.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnHuy_EditMember" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: FB539B;" styleClass="btnHuy" text="Hủy" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="-250.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="viewAddMember" alignment="CENTER" layoutX="346.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #623ed0; -fx-background-radius: 10;" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Mã thành viên" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtMaThanhVien_Add" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Tên thành viên" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTenThanhVien_Add" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Địa chỉ" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtDiaChi_Add" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Số điện thoại" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtSoDienThoai_Add" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Email" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtEmail_Add" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="360.0" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="19.0" prefWidth="120.0" text="Thẻ thành viên" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTheThanhVien_Add" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="536.0">
+                           <children>
+                              <Button fx:id="btnSua_AddMember" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: #71abfa;" styleClass="btnLuu" text="Lưu" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="14.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnHuy_AddMember" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: FB539B;" styleClass="btnHuy" text="Hủy" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="-250.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <BorderPane fx:id="quanLyMuonTraView" prefHeight="700.0" prefWidth="1200.0" visible="false">
+                     <center>
+                        <TableView fx:id="tableListTicketView" maxHeight="-Infinity" maxWidth="1080.0" prefHeight="200.0" prefWidth="200.0" style="-fx-pref-height: 800;" styleClass="tableView" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="maPhieuColumn" prefWidth="89.5" text="Mã phiếu">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                    <String fx:value="tableColumn1" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tenNguoiMuonColumn" prefWidth="161.5" text="Tên người mượn">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="maNguoiMuonColumn" prefWidth="121.5" text="Mã người mượn">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="nguoiChoMuonColumn" prefWidth="141.5" text="Người tạo phiếu">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="ngayMuonColumn" prefWidth="148.5" text="Ngày lập phiếu">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="soLuongSachColumn" prefWidth="116.0" text="Số lượng sách">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tienPhatColumn" prefWidth="164.5" text="Tiền phạt">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                              <TableColumn fx:id="tuyChonTicketColumn" prefWidth="137.5" text="Tùy chọn">
+                                 <styleClass>
+                                    <String fx:value="tableColumnQuanLySach" />
+                                    <String fx:value="tableColumn" />
+                                 </styleClass>
+                              </TableColumn>
+                           </columns>
+                           <BorderPane.margin>
+                              <Insets left="20.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </center>
+                     <bottom>
+                        <HBox prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <top>
+                        <HBox prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" maxWidth="255.0" prefHeight="30.0" prefWidth="255.0" style="-fx-background-color: #ffff; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-color: #eff2f7;" styleClass="wrapperSeachContain">
+                                 <children>
+                                    <TextField fx:id="txtSearchTicket" maxWidth="260.0" prefHeight="30.0" prefWidth="260.0" promptText="Tìm kiếm..." style="-fx-text-fill: #000; -fx-background-color: transparent; -fx-pref-height: 30;">
+                                       <HBox.margin>
+                                          <Insets left="6.0" />
+                                       </HBox.margin>
+                                       <styleClass>
+                                          <String fx:value="txtFind" />
+                                          <String fx:value="txtSearch" />
+                                       </styleClass>
+                                    </TextField>
+                                    <FontAwesomeIconView fill="#b0b9c6" glyphName="SEARCH" size="12" text="">
+                                       <HBox.margin>
+                                          <Insets left="4.0" right="10.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="25.0" left="20.0" top="25.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="893.0">
+                                 <children>
+                                    <HBox fx:id="btnAddTicket" alignment="CENTER" onMouseClicked="#btnAddTicket_Click" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #623ed0; -fx-background-radius: 20; -fx-cursor: hand;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE_ALT" size="16">
+                                             <HBox.margin>
+                                                <Insets left="4.0" right="6.0" />
+                                             </HBox.margin>
+                                          </FontAwesomeIconView>
+                                          <Label style="-fx-text-fill: #fff;" text="Thêm phiếu" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="22.0" right="12.0" top="22.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="btnRefreshTicketList" alignment="CENTER" onMouseClicked="#btnRefreshListTickert_Click" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #623ed0; -fx-background-radius: 40; -fx-cursor: hand;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="16">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </FontAwesomeIconView>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="22.0" right="52.0" top="22.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="50.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+                  <VBox fx:id="viewAddTicket" alignment="CENTER" layoutX="346.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #623ed0; -fx-background-radius: 10;" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Mã phiếu" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtMaPhieu" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Họ tên người mượn" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtHoTenNguoiMuon" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Số sách mượn" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtSoLuongSach" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="536.0">
+                           <children>
+                              <Button fx:id="btnLuu_AddTicket" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: #71abfa;" styleClass="btnLuu" text="Lưu" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="14.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnHuy_AddTicket" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: FB539B;" styleClass="btnHuy" text="Hủy" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="-250.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="viewEditTicket" alignment="CENTER" layoutX="346.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #623ed0; -fx-background-radius: 10;" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label prefWidth="120.0" text="Mã phiếu" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtMaPhieu_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Họ tên người mượn" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtHoTenNguoiMuon_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="50.0" prefWidth="200.0" visible="true">
+                           <children>
+                              <Label prefWidth="120.0" text="Số sách mượn" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtSoLuongSach_Edit" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="536.0">
+                           <children>
+                              <Button fx:id="btnLuu_EditTicket" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: #71abfa;" styleClass="btnLuu" text="Lưu" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="14.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnHuy_EditTicket" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: FB539B;" styleClass="btnHuy" text="Hủy" textFill="#dddddd">
+                                 <HBox.margin>
+                                    <Insets right="-250.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <BorderPane fx:id="tongQuanView" prefHeight="700.0" prefWidth="1200.0">
+                     <top>
+                        <HBox alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="itemTongQuanChung" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom right,#00F260 ,#0575E6); -fx-background-radius: 12; -fx-cursor: hand;">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="40.0" top="20.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label prefHeight="140.0" prefWidth="139.0" style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-text-fill: #fff;" text="Tổng quan chung" />
+                                    <MaterialDesignIconView fill="WHITE" glyphName="VIEW_DASHBOARD" size="60">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </MaterialDesignIconView>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="itemTongQuanDuLieuSach" alignment="CENTER_LEFT" layoutX="50.0" layoutY="30.0" prefHeight="100.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom right,#06beb6 ,#396afc); -fx-background-radius: 12; -fx-cursor: hand;">
+                                 <children>
+                                    <Label prefHeight="140.0" prefWidth="140.0" style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-text-fill: #fff;" text="Tổng quan dữ liệu sách" />
+                                    <FontAwesomeIconView fill="WHITE" glyphName="AREA_CHART" layoutX="140.0" layoutY="84.0" size="60" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="40.0" top="20.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox fx:id="itemTongQuanDuLieuThanhVien" alignment="CENTER_LEFT" layoutX="270.0" layoutY="10.0" prefHeight="100.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom left,#7F00FF,#E100FF); -fx-background-radius: 12; -fx-cursor: hand;">
+                                 <children>
+                                    <Label prefHeight="140.0" prefWidth="140.0" style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-text-fill: #fff;" text="Tổng quan dữ liệu thành viên" />
+                                    <FontAwesomeIconView fill="WHITE" glyphName="BAR_CHART_ALT" size="60" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="40.0" top="20.0" />
+                                 </HBox.margin>
+                              </HBox>
+                              <HBox fx:id="itemTongQuanDuLieuPhieuMuon" alignment="CENTER_LEFT" layoutX="490.0" layoutY="10.0" prefHeight="100.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to top right,#ff9966,#ff5e62); -fx-background-radius: 12; -fx-cursor: hand;">
+                                 <children>
+                                    <Label prefHeight="140.0" prefWidth="140.0" style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-text-fill: #fff;" text="Tổng quan dữ liệu phiếu mượn" />
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PIE_CHART" size="60" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" left="40.0" top="20.0" />
+                                 </HBox.margin>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="536.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets left="40.0" right="160.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <AnchorPane fx:id="viewChartTongQuanChung" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                 <children>
+                                    <LineChart fx:id="chartTongQuanChung" layoutY="60.0" prefHeight="441.0" prefWidth="1002.0" title="Thống kê dữ liệu qua các tháng">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" fx:id="xAxisTongQuan" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="viewChartTongQuanDuLieuSach" prefHeight="483.0" prefWidth="1002.0" visible="false">
+                                 <children>
+                                    <BarChart fx:id="barChartTongQuanSach" layoutY="60.0" prefHeight="403.0" prefWidth="600.0" title="Biểu đồ số sách nhập mới qua các tháng">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                    <PieChart fx:id="pieChartTongQuanSach" layoutX="600.0" layoutY="60.0" prefHeight="384.0" prefWidth="481.0" title="Số sách nhập mới theo thể loại" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="viewChartTongQuanDuLieuThanhVien" prefHeight="483.0" prefWidth="1002.0" visible="false">
+                                 <children>
+                                    <AreaChart fx:id="areaChartTongQuanThanhVien" layoutY="60.0" prefHeight="403.0" prefWidth="600.0" title="Biểu đồ số thành viên đăng ký mới qua các tháng">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </AreaChart>
+                                    <PieChart fx:id="pieChartTongQuanThanhVien" layoutX="600.0" layoutY="60.0" prefHeight="384.0" prefWidth="481.0" title="Tỉ lệ thành viên chưa trả " />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="viewChartTongQuanDuLieuPhieuMuon" prefHeight="483.0" prefWidth="1002.0" visible="false">
+                                 <children>
+                                    <LineChart fx:id="lineChartTongQuanPhieuMuon" layoutY="60.0" prefHeight="403.0" prefWidth="600.0" title="Biểu đồ số phiếu mượn đăng ký mới qua các tháng">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <PieChart fx:id="pieChartTongQuanPhieuMuon" layoutX="600.0" layoutY="60.0" prefHeight="384.0" prefWidth="481.0" title="Tỉ lệ phiếu mượn bị phạt " />
+                                 </children>
+                              </AnchorPane>
+                              <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: #fff;" text="Năm">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ComboBox fx:id="cbbNam" prefHeight="28.0" prefWidth="80.0" style="-fx-background-color: #ffff;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+                  <AnchorPane minHeight="75.0" AnchorPane.rightAnchor="30.0">
+                     <children>
+                        <VBox fx:id="listChangedUser" maxHeight="60.0" maxWidth="120.0" minHeight="75.0" minWidth="120.0" prefHeight="60.0" prefWidth="120.0" style="-fx-background-color: #004e92; -fx-background-radius: 2;" visible="false" AnchorPane.leftAnchor="-60.0">
+                           <children>
+                              <Button fx:id="btnChooseFileImg" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: #fff; -fx-font-size: 12; -fx-alignment: left;" styleClass="btnChangedPassWord" text="Đổi ảnh đại điện" />
+                              <Button fx:id="btnChangedPassWordAcc" mnemonicParsing="false" onMouseClicked="#btnChangedPassWord_Click" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: #fff; -fx-font-size: 12; -fx-alignment: left;" styleClass="btnChangedPassWord" text="Đổi mật khẩu" />
+                              <Button fx:id="btnLogOffAcc" mnemonicParsing="false" onMouseClicked="#btnLogOffUser_Click" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: #fff; -fx-font-size: 12; -fx-alignment: left;" styleClass="btnLogOffUser" text="Đăng xuất" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

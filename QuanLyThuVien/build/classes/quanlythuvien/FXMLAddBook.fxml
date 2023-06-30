@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #623ed0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanlythuvien.FXMLAddBookController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Mã sách" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtMaSach" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Tên sách" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtTenSach" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Tác giả" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtTacGia" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Năm xuất bản" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <DatePicker fx:id="txtNamXB" prefHeight="30.0" prefWidth="250.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Nhà xuất bản" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtNhaXB" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Thể loại" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="cbbTheLoai" onAction="#selectedTheLoai" prefHeight="30.0" prefWidth="250.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefWidth="80.0" text="Số lượng" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtSoLuong" prefHeight="30.0" prefWidth="250.0" styleClass="txtAddBook" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="536.0">
+         <children>
+            <Button fx:id="btnLuu" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" onMouseClicked="#btnLuu_Click" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: #71abfa;" styleClass="btnLuu" text="Lưu" textFill="#dddddd">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnHuy" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" onMouseClicked="#btnHuy_Click" prefHeight="30.0" prefWidth="60.0" style="-fx-cursor: hand; -fx-background-color: FB539B;" styleClass="btnHuy" text="Hủy" textFill="#dddddd">
+               <HBox.margin>
+                  <Insets right="130.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

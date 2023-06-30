@@ -1,0 +1,10 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.btnLuu:hover{
+    -fx-background-color: #6D2FFF;
+}
+.btnHuy:hover{
+    -fx-background-color: #6D2FFF;
+}

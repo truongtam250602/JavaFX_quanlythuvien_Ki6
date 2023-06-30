@@ -1,0 +1,190 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.wrapperView{
+    -fx-background-color:#784DFD;
+}
+.wrapperMenuContain{
+    -fx-background-color:#623ed0;   
+}
+.titleMenuContain{
+    -fx-text-fill: linear-gradient(from 0% 0% to 100% 0%, #FB539B, #E285DE);
+    -fx-font-size: 20px;
+}
+.itemMenu{
+    -fx-text-fill: #d0c0ff;
+    -fx-font-size: 16px;
+    -fx-background-color: transparent;
+}
+.itemQuanLyThuVien:hover{
+    -fx-border-color: #E285DE;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+.itemQuanLyThuVien .radio{
+    -fx-opacity: 0;
+}
+.itemQuanLyThuVien.selected{
+    -fx-border-color: #E285DE;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+}
+.itemQuanLySach:hover{
+    -fx-border-color: #784DFD;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+.itemQuanLySach .radio{
+    -fx-opacity: 0;
+}
+.itemQuanLySach.selected{
+    -fx-border-color: #784DFD;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+}
+.itemQuanLyThanhVien:hover{
+    -fx-border-color: #4adaec;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+.itemQuanLyThanhVien .radio{
+    -fx-opacity: 0;
+}
+.itemQuanLyThanhVien.selected{
+    -fx-border-color: #4adaec;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+}
+.itemQuanLyTraMuonSach:hover{
+    -fx-border-color:  #FB539B;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+.itemQuanLyTraMuonSach .radio{
+    -fx-opacity: 0;
+}
+.itemQuanLyTraMuonSach.selected{
+    -fx-border-color:  #FB539B;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+}
+.itemThongTin:hover{
+    -fx-border-color: #7E82FC;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+.itemThongTin .radio{
+    -fx-opacity: 0;
+}
+.itemThongTin.selected{
+    -fx-border-color: #7E82FC;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: #210F55;
+}
+
+.angleDown:hover{
+    -fx-cursor: hand;
+}
+.btnLogOffUser{
+    -fx-background-color: transparent;
+}
+.btnLogOffUser:hover{
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+.btnChangedPassWord{
+    -fx-background-color: transparent;
+}
+.btnChangedPassWord:hover{
+    -fx-background-color: #210F55;
+    -fx-cursor: hand;
+}
+
+.chart{
+    /*-fx-background-color: #05263b;*/
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+}
+.chart-title{
+    -fx-text-fill: #fff;
+    -fx-padding: 0 0 10 0;
+}
+.chart-legend{
+    -fx-background-color:  transparent;
+}
+.chart-legend-item{
+    -fx-text-fill: #fff;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+.axis{
+    -fx-tick-label-fill: #fff;
+}
+.axis-label {
+    -fx-text-fill: #fff;
+}
+.pie-chart {
+    -fx-pref-width: 600px; /* Đặt chiều rộng */
+    -fx-pref-height: 600px; /* Đặt chiều cao */
+}
+.chart-pie-label{
+    -fx-fill: #fff;
+}
+.tableView{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10 0 10 0;
+}
+.table-view .column-header{
+    -fx-background-color: #623ed0; 
+    -fx-pref-height: 40;
+}
+.table-view .column-header:first-child{
+    -fx-background-radius: 10 0 0 0;
+}
+.table-view .column-header:last-child{
+    -fx-background-radius: 0 10 0 0;
+}
+.tableColumn .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: medium;
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-alignment: center-left;
+}
+.tableColumn{
+    -fx-text-fill: #222528;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+}
+.tableView .scroll-bar:horizontal{
+    -fx-opacity: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+.table-row-cell {
+    -fx-background-color: #fff;
+    -fx-cell-size: 40;
+    -fx-border-width: 0 0 5 0;
+}
+.table-row-cell:hover .table-cell {
+    -fx-text-fill: white;
+}
+.table-row-cell:hover{
+    -fx-background-color: rgba(71, 39, 152, 0.8);
+    -fx-text-fill: white;
+}
+.table-cell {
+    -fx-alignment-inset: center;
+    -fx-alignment: center-left;
+}
+.table-view .column-header .sort-order {
+    visibility: hidden;
+}
